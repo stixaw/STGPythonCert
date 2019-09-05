@@ -24,11 +24,12 @@ class Challenge2(unittest.TestCase):
             ec.presence_of_element_located((By.ID, "input-search")))
         search_input.click()
         search_input.send_keys('exotic')
-        search_input.send_keys(Keys.ENTER)
-        body = WebDriverWait(self.driver, 10).until(
-            ec.presence_of_element_located((By.ID, "serverSideDataTable")))
-        body_text = body.get_attribute("innerHTML")
-        self.assertIn("PORSCHE", body_text)
+        submit_button = self.driver.find_element_by_css_selector('[data-uname="homepageHeadersearchsubmit"]')
+        submit_button.click()
+        WebDriverWait(self.driver, 15).until(
+            ec.visibility_of_element_located((By.CSS_SELECTOR, "table#serverSideDataTable tbody")))
+        body = self.driver.find_element_by_css_selector("#serverSideDataTable tbody").get_property('text')
+        self.assertIn("PORSCHE", body)
 
 
 if __name__ == '__main__':
