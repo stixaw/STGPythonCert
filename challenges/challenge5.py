@@ -30,11 +30,11 @@ class Challenge5(unittest.TestCase):
             ec.visibility_of_element_located((By.CSS_SELECTOR, "table#serverSideDataTable tbody")))
         self.assertIn("Exotic", self.driver.title)
 
-        # filter on porsche
-        filter_input = self.driver.find_element_by_css_selector('#serverSideDataTable_filter input')
-        filter_input.click()
-        filter_input.send_keys('porsche')
-        filter_input.send_keys(Keys.ENTER)
+        # search filter on porsche
+        searchfilter_input = self.driver.find_element_by_css_selector('#serverSideDataTable_filter input')
+        searchfilter_input.click()
+        searchfilter_input.send_keys('porsche')
+        searchfilter_input.send_keys(Keys.ENTER)
         WebDriverWait(self.driver, 15).until(
             ec.visibility_of_element_located((By.CSS_SELECTOR, "table#serverSideDataTable tbody")))
         body = self.driver.find_element_by_css_selector("table#serverSideDataTable tbody").text
