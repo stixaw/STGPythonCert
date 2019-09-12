@@ -53,8 +53,9 @@ class Challenge5(unittest.TestCase):
             ec.presence_of_all_elements_located((By.XPATH, '//*[@data-uname="lotsearchLotmodel"]')))
         model_list = []
         for item in models:
-            model_name = item.text
-            model_list.append(model_name)
+            if item.text != '':
+                model_name = item.text
+                model_list.append(model_name)
         sorted_list = sorted(model_list)
         model_dict = {}
 
@@ -71,17 +72,18 @@ class Challenge5(unittest.TestCase):
             ec.presence_of_all_elements_located((By.XPATH, '//*[@data-uname="lotsearchLotdamagedescription"]')))
         dmg_dict = {}
         for dmg in dings:
-            dmg_name = dmg.text
-            if dmg_name == "FRONT END":
-                helperMethods.add_pair(dmg_name, dmg_dict)
-            elif dmg_name == "REAR END":
-                helperMethods.add_pair(dmg_name, dmg_dict)
-            elif dmg_name == "MINOR DENT/SCRATCHES":
-                helperMethods.add_pair(dmg_name, dmg_dict)
-            elif dmg_name == "UNDERCARRIAGE":
-                helperMethods.add_pair(dmg_name, dmg_dict)
-            else:
-                helperMethods.add_pair("MISC", dmg_dict)
+            if dmg.text != '':
+                dmg_name = dmg.text
+                if dmg_name == "FRONT END":
+                    helperMethods.add_pair(dmg_name, dmg_dict)
+                elif dmg_name == "REAR END":
+                    helperMethods.add_pair(dmg_name, dmg_dict)
+                elif dmg_name == "MINOR DENT/SCRATCHES":
+                    helperMethods.add_pair(dmg_name, dmg_dict)
+                elif dmg_name == "UNDERCARRIAGE":
+                    helperMethods.add_pair(dmg_name, dmg_dict)
+                else:
+                    helperMethods.add_pair("MISC", dmg_dict)
 
 
         print('***** Damage-Count *****')
