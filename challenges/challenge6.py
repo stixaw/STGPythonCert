@@ -38,8 +38,7 @@ class Challenge6(unittest.TestCase):
         # try catch for skyline
         try:
             model_search = wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, '#collapseinside4 [placeholder="Search"]')))
-            # model_search.send_keys('skyline')
-            model_search.send_keys('camry')
+            model_search.send_keys('skyline')
 
             self.driver.find_element_by_css_selector("input#lot_model_descSKYLINE").click()
             wait.until(
