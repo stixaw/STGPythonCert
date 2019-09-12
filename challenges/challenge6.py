@@ -18,7 +18,7 @@ class Challenge6(unittest.TestCase):
 
 
     def test_error_handling(self):
-        wait = WebDriverWait(self.driver, 10)
+        wait = WebDriverWait(self.driver, 20)
 
         # search for Nissan
         search_input = wait.until(
@@ -42,9 +42,11 @@ class Challenge6(unittest.TestCase):
 
             self.driver.find_element_by_css_selector("input#lot_model_descSKYLINE").click()
             wait.until(
-               ec.visibility_of_element_located((By.CSS_SELECTOR, "table#serverSideDataTable tbody")))
-            body = self.driver.find_element_by_css_selector("table#serverSideDataTable tbody").text
-            self.assertIn("SKYLINE", body)
+                ec.text_to_be_present_in_element((By.CSS_SELECTOR, '[data-uname="lotsearchLotmodel"]'), "SKYLINE"))
+
+            model = self.driver.find_element_by_css_selector('[data-uname="lotsearchLotmodel"]')
+            models_name = model.get_attribute('innerText')
+            self.assertIn("SKYLINE", models_name)
 
         except:
             print('ERROR skyline not found')
