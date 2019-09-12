@@ -1,4 +1,4 @@
-# dictionary module
+# helper module
 
 def add_pair(item, dict):
     if (item in dict):
