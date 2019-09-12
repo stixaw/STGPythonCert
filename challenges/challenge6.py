@@ -9,13 +9,11 @@ import helperMethods
 
 class Challenge6(unittest.TestCase):
 
-
     def setUp(self):
         self.driver = webdriver.Chrome('../chromedriver')
         self.driver.get('https://www.copart.com')
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
-
 
     def test_error_handling(self):
         wait = WebDriverWait(self.driver, 20)
@@ -51,8 +49,6 @@ class Challenge6(unittest.TestCase):
         except:
             print('ERROR skyline not found')
             self.driver.save_screenshot("screenshot.png")
-
-
 
 
     def tearDown(self):
