@@ -50,9 +50,9 @@ class Challenge6(unittest.TestCase):
             print('ERROR skyline not found')
             self.driver.save_screenshot("screenshot.png")
 
-
     def tearDown(self):
         self.driver.close()
+
 
 if __name__ == '__main__':
     unittest.main()
