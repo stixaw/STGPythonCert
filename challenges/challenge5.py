@@ -26,30 +26,30 @@ class Challenge5(unittest.TestCase):
         search_input.send_keys('Exotic')
         submit_button = self.driver.find_element_by_css_selector('[data-uname="homepageHeadersearchsubmit"]')
         submit_button.click()
-        WebDriverWait(self.driver, 15).until(
-            ec.visibility_of_element_located((By.CSS_SELECTOR, "table#serverSideDataTable tbody")))
+        wait.until(
+            ec.visibility_of_element_located((By.TAG_NAME, "tbody")))
         self.assertIn("Exotic", self.driver.title)
 
         # search filter on porsche
         searchfilter_input = self.driver.find_element_by_css_selector('#serverSideDataTable_filter input')
         searchfilter_input.click()
-        searchfilter_input.send_keys('porsche')
-        searchfilter_input.send_keys(Keys.ENTER)
-        WebDriverWait(self.driver, 15).until(
+        searchfilter_input.send_keys('porsche' + Keys.ENTER')
+        wait.until(
             ec.visibility_of_element_located((By.CSS_SELECTOR, "table#serverSideDataTable tbody")))
         body = self.driver.find_element_by_css_selector("table#serverSideDataTable tbody").text
         self.assertIn("PORSCHE", body)
 
         # extend filter to 100 results
-        WebDriverWait(self.driver, 15).until(
+       process_spinner = driver.find_element(By.ID, "serverSideDataTable_processing")
+       entries_control = wait.until(
             ec.presence_of_element_located((By.CSS_SELECTOR, "#serverSideDataTable_length select")))
-        entries_control = self.driver.find_element_by_css_selector("#serverSideDataTable_length select")
         entries_control.click()
         Select(entries_control).select_by_value("100")
-        WebDriverWait(self.driver, 15).until(ec.text_to_be_present_in_element((By.ID, "serverSideDataTable_info"), "1 to 100"))
+        wait.until(process_spinner.get_attribute('style') == 'display: block;')
+        wait.until(process_spinner.get_attribute('style') == 'display: none;')
 
         # Get Models
-        models = WebDriverWait(self.driver, 15).until(
+        models = wait.until(
             ec.presence_of_all_elements_located((By.XPATH, '//*[@data-uname="lotsearchLotmodel"]')))
         model_list = []
         for item in models:
@@ -68,7 +68,7 @@ class Challenge5(unittest.TestCase):
             print('{0}-{1}'.format(model, count))
 
         # Damages
-        dings = WebDriverWait(self.driver, 15).until(
+        dings = wait.until(
             ec.presence_of_all_elements_located((By.XPATH, '//*[@data-uname="lotsearchLotdamagedescription"]')))
         dmg_dict = {}
         for dmg in dings:
