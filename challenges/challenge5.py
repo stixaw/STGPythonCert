@@ -33,20 +33,21 @@ class Challenge5(unittest.TestCase):
         # search filter on porsche
         searchfilter_input = self.driver.find_element_by_css_selector('#serverSideDataTable_filter input')
         searchfilter_input.click()
-        searchfilter_input.send_keys('porsche' + Keys.ENTER')
+        searchfilter_input.send_keys('porsche' + Keys.ENTER)
         wait.until(
             ec.visibility_of_element_located((By.CSS_SELECTOR, "table#serverSideDataTable tbody")))
         body = self.driver.find_element_by_css_selector("table#serverSideDataTable tbody").text
         self.assertIn("PORSCHE", body)
 
         # extend filter to 100 results
-       process_spinner = driver.find_element(By.ID, "serverSideDataTable_processing")
-       entries_control = wait.until(
+
+        process_spinner = self.driver.find_element(By.ID, "serverSideDataTable_processing")
+        entries_control = wait.until(
             ec.presence_of_element_located((By.CSS_SELECTOR, "#serverSideDataTable_length select")))
         entries_control.click()
         Select(entries_control).select_by_value("100")
-        wait.until(process_spinner.get_attribute('style') == 'display: block;')
-        wait.until(process_spinner.get_attribute('style') == 'display: none;')
+        wait.until(lambda _: process_spinner.get_attribute('style') == 'display: block;')
+        wait.until(lambda _: process_spinner.get_attribute('style') == 'display: none;')
 
         # Get Models
         models = wait.until(
