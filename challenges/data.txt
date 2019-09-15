@@ -1,0 +1,10 @@
+honda - 14563
+toyota - 23347
+GMC - 4437
+ford - 23027
+BMW - 4449
+nissan - 14142
+dodge - 8222
+hyundai - 7533
+chrysler - 3713
+subaru - 3349

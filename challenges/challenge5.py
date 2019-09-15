@@ -7,15 +7,14 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 import helperMethods
 
-class Challenge5(unittest.TestCase):
 
+class Challenge5(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome('../chromedriver')
         self.driver.get('https://www.copart.com')
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
-
 
     def test_filter_for_porsche(self):
         wait = WebDriverWait(self.driver, 15)
@@ -86,15 +85,14 @@ class Challenge5(unittest.TestCase):
                 else:
                     helperMethods.add_pair("MISC", dmg_dict)
 
-
         print('***** Damage-Count *****')
         for dmg in dmg_dict:
             count = dmg_dict[dmg]
             print('{0}-{1}'.format(dmg, count))
 
-
     def tearDown(self):
         self.driver.close()
+
 
 if __name__ == '__main__':
     unittest.main()

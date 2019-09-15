@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
-import helperMethods
 
 
  # why not build a map of all the links on a certain section.
@@ -61,7 +60,7 @@ class Challenge7(unittest.TestCase):
                 self.driver.get(car_url)
                 self.driver.implicitly_wait(10)
 
-                WebDriverWait(self.driver, 15).until(
+                wait.until(
                     ec.visibility_of_element_located((By.CSS_SELECTOR, "table#serverSideDataTable tbody")))
                 body = self.driver.find_element_by_css_selector("table#serverSideDataTable tbody").text
                 self.assertIn(car_model, body)
