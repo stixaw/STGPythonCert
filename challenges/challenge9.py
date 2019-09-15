@@ -13,14 +13,7 @@ class Challenge9(unittest.TestCase):
         search_list = ["honda", "toyota", "GMC", "ford", "BMW", "nissan", "dodge", "hyundai", "chrysler", "subaru"]
         url = 'https://www.copart.com/public/lots/search'
 
-        cookie = 's_fid=3BFC35D460630745-31354C77F43D45F6; __cfduid=d522c6367c9915be293cba6b34b4ab9991565581886; s_vi=[CS]v1|2EA8711F0503200B-600011826001015B[CE]; OAID=066c33f79f0545bf809b8bc28ee2bf58; g2app.locationInfo=%7B%22countryCode%22%3A%22US%22%2C%22threeCharCountryCode%22%3A%22USA%22%2C%22stateName%22%3A%22Utah%22%2C%22stateCode%22%3A%22UT%22%2C%22cityName%22%3A%22Sandy%22%2C%22latitude%22%3A40.5794%2C%22longitude%22%3A-111.8816%2C%22zipCode%22%3A%2284070%22%2C%22countyName%22%3A%22Salt%20Lake%22%2C%22countyCode%22%3A%22035%22%2C%22metroName%22%3A%22%22%2C%22metroCode%22%3A%22%22%2C%22accuracy%22%3A%224%22%7D; visid_incap_242093=xkACFTEiTNWaPqasMe1J2DfiUF0AAAAAQkIPAAAAAACAR2OOAUI8ZuJ3FoZbjVCjPoerjCjPG0F3; g2app.searchResultsPageLength=100; incap_ses_1179_242093=XJFtYbwHLWjExsFboKZcEBanfV0AAAAAdyprGmPkoLSsJDlj+7tBfA==; g2usersessionid=713bc97ef3fb607e35728bb615a1ad66; G2JSESSIONID=0DA3FBF332D524B86F9E3D1906251209-n2; userLang=en; copartTimezonePref=%7B%22displayStr%22%3A%22MDT%22%2C%22offset%22%3A-6%2C%22dst%22%3Atrue%2C%22windowsTz%22%3A%22America%2FDenver%22%7D; timezone=America%2FDenver; s_depth=1; s_pv=public%3Ahomepage; s_vnum=1570850893984%26vn%3D6; s_invisit=true; s_lv_s=Less%20than%207%20days; s_cc=true; OAGEO=US%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C; usersessionid=79423db72fe159b4ef3a425b9e423f26; s_ppvl=22; s_nr=1568515894415-Repeat; s_lv=1568515894417; s_sq=copart-g2-us-prod%3D%2526c.%2526a.%2526activitymap.%2526page%253Dpublic%25253Ahomepage%2526link%253DSearch%2526region%253Dsearch-form%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c%2526pid%253Dpublic%25253Ahomepage%2526pidt%253D1%2526oid%253DSearch%2526oidt%253D3%2526ot%253DSUBMIT; s_ppv=public%253Ahomepage%2C66%2C20%2C714%2C1440%2C713%2C1440%2C900%2C2%2CP'
-
-        options = {
-            'authority': "www.copart.com",
-            'host': "www.copart.com",
-            'path': "public/lots/search",
-            'method': "POST",
-        }
+        cookie = 's_fid=3BFC35D460630745-31354C77F43D45F6; __cfduid=d522c6367c9915be293cba6b34b4ab9991565581886; s_vi=[CS]v1|2EA8711F0503200B-600011826001015B[CE]; OAID=066c33f79f0545bf809b8bc28ee2bf58; g2app.locationInfo=%7B%22countryCode%22%3A%22US%22%2C%22threeCharCountryCode%22%3A%22USA%22%2C%22stateName%22%3A%22Utah%22%2C%22stateCode%22%3A%22UT%22%2C%22cityName%22%3A%22Sandy%22%2C%22latitude%22%3A40.5794%2C%22longitude%22%3A-111.8816%2C%22zipCode%22%3A%2284070%22%2C%22countyName%22%3A%22Salt%20Lake%22%2C%22countyCode%22%3A%22035%22%2C%22metroName%22%3A%22%22%2C%22metroCode%22%3A%22%22%2C%22accuracy%22%3A%224%22%7D; visid_incap_242093=xkACFTEiTNWaPqasMe1J2DfiUF0AAAAAQkIPAAAAAACAR2OOAUI8ZuJ3FoZbjVCjPoerjCjPG0F3; g2app.searchResultsPageLength=100; g2usersessionid=713bc97ef3fb607e35728bb615a1ad66; G2JSESSIONID=0DA3FBF332D524B86F9E3D1906251209-n2; userLang=en; copartTimezonePref=%7B%22displayStr%22%3A%22MDT%22%2C%22offset%22%3A-6%2C%22dst%22%3Atrue%2C%22windowsTz%22%3A%22America%2FDenver%22%7D; timezone=America%2FDenver; s_cc=true; OAGEO=US%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C; usersessionid=79423db72fe159b4ef3a425b9e423f26; incap_ses_1179_242093=QhwjfjZQEhcvMu9boKZcEJXTfV0AAAAARC3L/XBWunb66Wj5yDGskA==; s_depth=1; s_pv=public%3Ahomepage; s_vnum=1570850893984%26vn%3D7; s_invisit=true; s_lv_s=Less%20than%201%20day; s_ppvl=member%253AsearchResults%2C10%2C10%2C713%2C1440%2C713%2C1440%2C900%2C2%2CP; s_nr=1568527275384-Repeat; s_lv=1568527275386; s_sq=copart-g2-us-prod%3D%2526c.%2526a.%2526activitymap.%2526page%253Dpublic%25253Ahomepage%2526link%253D%25252Fimages%25252Ficons%25252Ficon_Search_Desktop.svg%2526region%253Dsearch-form%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c%2526pid%253Dpublic%25253Ahomepage%2526pidt%253D1%2526oid%253D%25250A%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%25250A%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%2526oidt%253D3%2526ot%253DSUBMIT; s_ppv=public%253Ahomepage%2C66%2C20%2C714%2C1440%2C713%2C1440%2C900%2C2%2CP'
 
         my_headers = {
             "Content-Type": "application/json",
@@ -159,23 +152,40 @@ class Challenge9(unittest.TestCase):
             results = data['results']
             total_elements = results['totalElements']
 
-            # validate lotNumberStr = class str
-            content = results['content']
-            first_content = content[0]
-            lot_num_str = first_content['lotNumberStr']
-            self.assertEqual(type(lot_num_str).__name__, 'str')
-
-            # validate ln is integer/float
-            content_ln = first_content['ln']
-            self.assertEqual(type(content_ln).__name__, 'int')
-
-            # validate mkn is str
-            content_mkn = first_content['mkn']
-            self.assertEqual(type(content_mkn).__name__, 'str')
-
             message = '{0} - {1}'.format(car_model, total_elements)
             print(message)
             f.write(message + '\n')
+
+            # validate lotNumberStr = class str
+            content = results['content']
+            first_content = content[0]
+
+            for key, value in first_content.items():
+                # print("{0}: {1} is data type {2}".format(key, value, type(value).__name__))
+                if type(value).__name__ == 'str':
+                    self.assertTrue(isinstance(value, str))
+                elif type(value).__name__ == 'int':
+                    self.assertTrue(isinstance(value, int))
+                elif type(value).__name__ == 'float':
+                    self.assertTrue(isinstance(value, float))
+                elif type(value).__name__ == 'bool':
+                    self.assertTrue(isinstance(value, bool))
+                elif type(value).__name__ == 'list':
+                    self.assertTrue(isinstance(value, list))
+                else:
+                    print('value:{0} type {1} is not defined statement'.format(value, type(value).__name__))
+
+            # # validate lotNumberStr is string
+            # lot_num_str = first_content['lotNumberStr']
+            # self.assertTrue(isinstance(lot_num_str, str))
+            #
+            # # validate ln is integer/float
+            # content_ln = first_content['ln']
+            # self.assertTrue(isinstance(lot_num_str, str))
+            #
+            # # validate mkn is str
+            # content_mkn = first_content['mkn']
+            # self.assertTrue(isinstance(lot_num_str, str))
         f.close()
 
 

@@ -1,0 +1,100 @@
+{
+  "lotNumberStr": "22758467",
+  "ln": 22758467,
+  "mkn": "SUBARU",
+  "lm": "OUTBACK 3.",
+  "lcy": 2016,
+  "fv": "4S4BSENC3G3X09840",
+  "la": 31975.0,
+  "rc": 0.0,
+  "obc": "A",
+  "orr": 61557.0,
+  "ord": "ACTUAL",
+  "egn": "3.6L  6",
+  "cy": "6",
+  "ld": "2016 SUBARU OUTBACK 3.6R LIMITED",
+  "yn": "QC - MONTREAL",
+  "cuc": "CAD",
+  "tz": "EDT",
+  "at": "10:00:00",
+  "aan": 0,
+  "hb": 0.0,
+  "ss": 3,
+  "bndc": "",
+  "bnp": 0.0,
+  "sbf": False,
+  "dd": "SIDE",
+  "tims": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX56/4dc688bf-d023-457f-9207-eeb12c800ae7.JPG",
+  "lic": ["IV", "SITE-CA"],
+  "gr": "E040",
+  "dtc": "SD",
+  "ynumb": 205,
+  "phynumb": 205,
+  "bf": False,
+  "ymin": 175,
+  "htsmn": "Y",
+  "myb": 0.0,
+  "lmc": "SUBA",
+  "sdd": "FRONT END",
+  "bstl": "4DR SPOR",
+  "ft": "GAS",
+  "hk": "YES",
+  "drv": "All wheel drive",
+  "ess": "On Approval",
+  "showSeller": False,
+  "sstpflg": False,
+  "syn": "QC - MONTREAL",
+  "ifs": False,
+  "pbf": False,
+  "crg": 0.0,
+  "brand": "COPART"
+}
+lotNumberStr: 22758467 is data type str
+ln: 22758467 is data type int
+mkn: SUBARU is data type str
+lm: OUTBACK 3. is data type str
+lcy: 2016 is data type int
+fv: 4S4BSENC3G3X09840 is data type str
+la: 31975.0 is data type float
+rc: 0.0 is data type float
+obc: A is data type str
+orr: 61557.0 is data type float
+ord: ACTUAL is data type str
+egn: 3.6L  6 is data type str
+cy: 6 is data type str
+ld: 2016 SUBARU OUTBACK 3.6R LIMITED is data type str
+yn: QC - MONTREAL is data type str
+cuc: CAD is data type str
+tz: EDT is data type str
+at: 10:00:00 is data type str
+aan: 0 is data type int
+hb: 0.0 is data type float
+ss: 3 is data type int
+bndc:  is data type str
+bnp: 0.0 is data type float
+sbf: False is data type bool
+dd: SIDE is data type str
+tims: https://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX56/4dc688bf-d023-457f-9207-eeb12c800ae7.JPG is data type str
+lic: ["IV", "SITE-CA"] is data type list
+gr: E040 is data type str
+dtc: SD is data type str
+ynumb: 205 is data type int
+phynumb: 205 is data type int
+bf: False is data type bool
+ymin: 175 is data type int
+htsmn: Y is data type str
+myb: 0.0 is data type float
+lmc: SUBA is data type str
+sdd: FRONT END is data type str
+bstl: 4DR SPOR is data type str
+ft: GAS is data type str
+hk: YES is data type str
+drv: All wheel drive is data type str
+ess: On Approval is data type str
+showSeller: False is data type bool
+sstpflg: False is data type bool
+syn: QC - MONTREAL is data type str
+ifs: False is data type bool
+pbf: False is data type bool
+crg: 0.0 is data type float
+brand: COPART is data type str
