@@ -1,5 +1,6 @@
 import unittest
 import requests
+import csv
 import json
 
 class Challenge10(unittest.TestCase):
@@ -8,8 +9,8 @@ class Challenge10(unittest.TestCase):
         r = requests.get('https://api.github.com/events')
         print(r)
 
-    def test_search_copart_for_honda(self):
-        cookie = 's_fid=3BFC35D460630745-31354C77F43D45F6; __cfduid=d522c6367c9915be293cba6b34b4ab9991565581886; s_vi=[CS]v1|2EA8711F0503200B-600011826001015B[CE]; OAID=066c33f79f0545bf809b8bc28ee2bf58; g2app.locationInfo=%7B%22countryCode%22%3A%22US%22%2C%22threeCharCountryCode%22%3A%22USA%22%2C%22stateName%22%3A%22Utah%22%2C%22stateCode%22%3A%22UT%22%2C%22cityName%22%3A%22Sandy%22%2C%22latitude%22%3A40.5794%2C%22longitude%22%3A-111.8816%2C%22zipCode%22%3A%2284070%22%2C%22countyName%22%3A%22Salt%20Lake%22%2C%22countyCode%22%3A%22035%22%2C%22metroName%22%3A%22%22%2C%22metroCode%22%3A%22%22%2C%22accuracy%22%3A%224%22%7D; g2app.searchResultsPageLength=100; visid_incap_242093=xkACFTEiTNWaPqasMe1J2DfiUF0AAAAAQ0IPAAAAAACAtbOPAUIHcUNsuF64OkbSe+3oAnxQWqAS; _ga=GA1.2.1879390003.1571692199; __gads=ID=898431106960e754:T=1571692199:S=ALNI_MZJvucp01R-MFpZ5wcbeHGk9RSWIA; g2usersessionid=e1719a0c957899ec65cb43c82aa62a1a; G2JSESSIONID=48EF98E07718D64FA3B74322ABD4AE9E-n1; userLang=en; incap_ses_1179_242093=HW+BNED2HXiRkwLzuaZcEHi7PF4AAAAAJfzvzJVsBKyJ5tHyPrKTCQ==; copartTimezonePref=%7B%22displayStr%22%3A%22MST%22%2C%22offset%22%3A-7%2C%22dst%22%3Afalse%2C%22windowsTz%22%3A%22America%2FDenver%22%7D; timezone=America%2FDenver; s_depth=1; s_pv=public%3Ahomepage; s_vnum=1583630460395%26vn%3D1; s_invisit=true; s_lv_s=More%20than%2030%20days; s_cc=true; OAGEO=US%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C; usersessionid=b8d4872aca78e4e741920941deb62716; _gcl_au=1.1.1736289808.1581038463; _gid=GA1.2.521915029.1581038463; _gat_UA-90930613-1=1; _fbp=fb.1.1581038463440.1184972542; s_ppvl=18; s_nr=1581038474997-New; s_lv=1581038474999; s_sq=copart-g2-us-prod%3D%2526c.%2526a.%2526activitymap.%2526page%253Dpublic%25253Ahomepage%2526link%253D%25252Fimages%25252Ficons%25252Ficon_Search_Desktop.svg%2526region%253Dsearch-form%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c%2526pid%253Dpublic%25253Ahomepage%2526pidt%253D1%2526oid%253D%25250A%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%25250A%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%2526oidt%253D3%2526ot%253DSUBMIT; s_ppv=public%253Ahomepage%2C67%2C19%2C727%2C1440%2C726%2C1440%2C900%2C2%2CP'
+    def test_search_copart_for_searchterm(self):
+        cookie = 's_fid=3BFC35D460630745-31354C77F43D45F6; __cfduid=d522c6367c9915be293cba6b34b4ab9991565581886; s_vi=[CS]v1|2EA8711F0503200B-600011826001015B[CE]; OAID=066c33f79f0545bf809b8bc28ee2bf58; g2app.locationInfo=%7B%22countryCode%22%3A%22US%22%2C%22threeCharCountryCode%22%3A%22USA%22%2C%22stateName%22%3A%22Utah%22%2C%22stateCode%22%3A%22UT%22%2C%22cityName%22%3A%22Sandy%22%2C%22latitude%22%3A40.5794%2C%22longitude%22%3A-111.8816%2C%22zipCode%22%3A%2284070%22%2C%22countyName%22%3A%22Salt%20Lake%22%2C%22countyCode%22%3A%22035%22%2C%22metroName%22%3A%22%22%2C%22metroCode%22%3A%22%22%2C%22accuracy%22%3A%224%22%7D; g2app.searchResultsPageLength=100; visid_incap_242093=xkACFTEiTNWaPqasMe1J2DfiUF0AAAAAQ0IPAAAAAACAtbOPAUIHcUNsuF64OkbSe+3oAnxQWqAS; _ga=GA1.2.1879390003.1571692199; __gads=ID=898431106960e754:T=1571692199:S=ALNI_MZJvucp01R-MFpZ5wcbeHGk9RSWIA; g2usersessionid=e1719a0c957899ec65cb43c82aa62a1a; G2JSESSIONID=48EF98E07718D64FA3B74322ABD4AE9E-n1; userLang=en; copartTimezonePref=%7B%22displayStr%22%3A%22MST%22%2C%22offset%22%3A-7%2C%22dst%22%3Afalse%2C%22windowsTz%22%3A%22America%2FDenver%22%7D; timezone=America%2FDenver; s_cc=true; OAGEO=US%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C; usersessionid=b8d4872aca78e4e741920941deb62716; _gcl_au=1.1.1736289808.1581038463; _gid=GA1.2.521915029.1581038463; _fbp=fb.1.1581038463440.1184972542; s_ppvl=public%253Ahomepage%2C67%2C19%2C727%2C1440%2C726%2C1440%2C900%2C2%2CP; s_pv=member%3AsearchResults; s_vnum=1583630460395%26vn%3D2; s_invisit=true; s_lv_s=Less%20than%201%20day; s_ppv=member%253AsearchResults%2C67%2C10%2C726%2C1440%2C726%2C1440%2C900%2C2%2CP; incap_ses_1179_242093=jahuIr8J1DmAuRrzuaZcECXOPF4AAAAAEuno5+9XkzuaVzUUhEoU6w==; s_nr=1581043251734-Repeat; s_lv=1581043251736; s_sq=copart-g2-us-prod%3D%2526c.%2526a.%2526activitymap.%2526page%253Dmember%25253AsearchResults%2526link%253DSearch%2526region%253Dsearch-form%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c%2526pid%253Dmember%25253AsearchResults%2526pidt%253D1%2526oid%253DSearch%2526oidt%253D3%2526ot%253DSUBMIT'
 
         my_headers = {
             "Content-Type": "application/json",
@@ -134,28 +135,55 @@ class Challenge10(unittest.TestCase):
         search_list = []
         url = 'https://www.copart.com/public/lots/search'
 
-        f = open('data.txt', 'w')
+        file_path = "/Users/angel.williams/dev/STGChallenges/challenges/challenge10.csv"
 
-        for model in search_list:
-            form_data['query'] = model
+        with open(file_path, 'rt')as f:
+            search_list = csv.DictReader(f)
+            line_count = 0
+            search_term = ""
+            for row in search_list:
+                if line_count == 0:
+                    print(f'Column names are {", ".join(row)}')
+                    line_count += 1
+                if line_count > 0:
+                    dict_make = row["make"]
+                    dict_model = row["model"]
+                    dict_year = row["year"]
+                    dict_type = row["Vehicle type"]
 
-            r = requests.post(url, headers=my_headers, data=form_data)
-            response = r.json()
+                if dict_make != "":
+                    search_term = dict_make
+                if dict_model != "":
+                    search_term = search_term + " " + dict_model
+                if dict_year != "":
+                    search_term = search_term + " " + dict_year
+                if dict_type != "":
+                    search_term = search_term + " " + dict_type
 
-            # get car model in search
-            data = response['data']
-            query = data['query']
-            query_2 = query['query']
-            car_model = query_2[0]
+                print(search_term)
+                line_count += 1
 
-            # get totalElements from results
-            results = data['results']
-            total_elements = results['totalElements']
+                f = open('data.txt', 'w')
 
-            message = '{0} - {1}'.format(car_model, total_elements)
-            print(message)
-            f.write(message + '\n')
-        f.close()
+                form_data['query'] = search_term
+
+                r = requests.post(url, headers=my_headers, data=form_data)
+                response = r.json()
+
+                # get car model in search
+                data = response['data']
+                query = data['query']
+                query_2 = query['query']
+                car_model = query_2[0]
+
+                # get totalElements from results
+                results = data['results']
+                total_elements = results['totalElements']
+
+                message = '{0} - {1}'.format(car_model, total_elements)
+                print(message)
+                f.write(message + '\n')
+                f.close()
 
 
 if __name__ == '__main__':
