@@ -13,7 +13,7 @@ class Challenge9(unittest.TestCase):
         search_list = ["honda", "toyota", "GMC", "ford", "BMW", "nissan", "dodge", "hyundai", "chrysler", "subaru"]
         url = 'https://www.copart.com/public/lots/search'
 
-        cookie = 's_fid=3BFC35D460630745-31354C77F43D45F6; __cfduid=d522c6367c9915be293cba6b34b4ab9991565581886; s_vi=[CS]v1|2EA8711F0503200B-600011826001015B[CE]; OAID=066c33f79f0545bf809b8bc28ee2bf58; g2app.locationInfo=%7B%22countryCode%22%3A%22US%22%2C%22threeCharCountryCode%22%3A%22USA%22%2C%22stateName%22%3A%22Utah%22%2C%22stateCode%22%3A%22UT%22%2C%22cityName%22%3A%22Sandy%22%2C%22latitude%22%3A40.5794%2C%22longitude%22%3A-111.8816%2C%22zipCode%22%3A%2284070%22%2C%22countyName%22%3A%22Salt%20Lake%22%2C%22countyCode%22%3A%22035%22%2C%22metroName%22%3A%22%22%2C%22metroCode%22%3A%22%22%2C%22accuracy%22%3A%224%22%7D; g2app.searchResultsPageLength=100; incap_ses_731_242093=TaWVN64LJg6XmybSsSUlCpoerl0AAAAAjzzv88hL1kmr9x1Y8y8Tmg==; g2usersessionid=023c5fb0412f4eeeabb81f3a16fe981a; G2JSESSIONID=832D16AC5627AD221C558FE81AC75957-n1; userLang=en; visid_incap_242093=xkACFTEiTNWaPqasMe1J2DfiUF0AAAAAQ0IPAAAAAACAtbOPAUIHcUNsuF64OkbSe+3oAnxQWqAS; copartTimezonePref=%7B%22displayStr%22%3A%22MDT%22%2C%22offset%22%3A-6%2C%22dst%22%3Atrue%2C%22windowsTz%22%3A%22America%2FDenver%22%7D; timezone=America%2FDenver; _ga=GA1.2.1879390003.1571692199; _gid=GA1.2.544916175.1571692199; _gat=1; s_depth=1; s_pv=public%3Ahomepage; s_vnum=1574284199552%26vn%3D1; s_invisit=true; s_lv_s=More%20than%2030%20days; s_cc=true; OAGEO=US%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C; usersessionid=79423db72fe159b4ef3a425b9e423f26; __gads=ID=898431106960e754:T=1571692199:S=ALNI_MZJvucp01R-MFpZ5wcbeHGk9RSWIA; _fbp=fb.1.1571692202395.1105687356; s_ppvl=18; s_nr=1571692223767-New; s_lv=1571692223769; s_sq=copart-g2-us-prod%3D%2526c.%2526a.%2526activitymap.%2526page%253Dpublic%25253Ahomepage%2526link%253DSearch%2526region%253Dsearch-form%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c%2526pid%253Dpublic%25253Ahomepage%2526pidt%253D1%2526oid%253DSearch%2526oidt%253D3%2526ot%253DSUBMIT; s_ppv=public%253Ahomepage%2C50%2C11%2C714%2C984%2C713%2C1440%2C900%2C2%2CP'
+        cookie = 's_fid=3BFC35D460630745-31354C77F43D45F6; __cfduid=d522c6367c9915be293cba6b34b4ab9991565581886; s_vi=[CS]v1|2EA8711F0503200B-600011826001015B[CE]; OAID=066c33f79f0545bf809b8bc28ee2bf58; g2app.locationInfo=%7B%22countryCode%22%3A%22US%22%2C%22threeCharCountryCode%22%3A%22USA%22%2C%22stateName%22%3A%22Utah%22%2C%22stateCode%22%3A%22UT%22%2C%22cityName%22%3A%22Sandy%22%2C%22latitude%22%3A40.5794%2C%22longitude%22%3A-111.8816%2C%22zipCode%22%3A%2284070%22%2C%22countyName%22%3A%22Salt%20Lake%22%2C%22countyCode%22%3A%22035%22%2C%22metroName%22%3A%22%22%2C%22metroCode%22%3A%22%22%2C%22accuracy%22%3A%224%22%7D; g2app.searchResultsPageLength=100; visid_incap_242093=xkACFTEiTNWaPqasMe1J2DfiUF0AAAAAQ0IPAAAAAACAtbOPAUIHcUNsuF64OkbSe+3oAnxQWqAS; _ga=GA1.2.1879390003.1571692199; __gads=ID=898431106960e754:T=1571692199:S=ALNI_MZJvucp01R-MFpZ5wcbeHGk9RSWIA; g2usersessionid=e1719a0c957899ec65cb43c82aa62a1a; G2JSESSIONID=48EF98E07718D64FA3B74322ABD4AE9E-n1; userLang=en; incap_ses_1179_242093=HW+BNED2HXiRkwLzuaZcEHi7PF4AAAAAJfzvzJVsBKyJ5tHyPrKTCQ==; copartTimezonePref=%7B%22displayStr%22%3A%22MST%22%2C%22offset%22%3A-7%2C%22dst%22%3Afalse%2C%22windowsTz%22%3A%22America%2FDenver%22%7D; timezone=America%2FDenver; s_depth=1; s_pv=public%3Ahomepage; s_vnum=1583630460395%26vn%3D1; s_invisit=true; s_lv_s=More%20than%2030%20days; s_cc=true; OAGEO=US%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C; usersessionid=b8d4872aca78e4e741920941deb62716; _gcl_au=1.1.1736289808.1581038463; _gid=GA1.2.521915029.1581038463; _gat_UA-90930613-1=1; _fbp=fb.1.1581038463440.1184972542; s_ppvl=18; s_nr=1581038474997-New; s_lv=1581038474999; s_sq=copart-g2-us-prod%3D%2526c.%2526a.%2526activitymap.%2526page%253Dpublic%25253Ahomepage%2526link%253D%25252Fimages%25252Ficons%25252Ficon_Search_Desktop.svg%2526region%253Dsearch-form%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c%2526pid%253Dpublic%25253Ahomepage%2526pidt%253D1%2526oid%253D%25250A%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%25250A%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%252520%2526oidt%253D3%2526ot%253DSUBMIT; s_ppv=public%253Ahomepage%2C67%2C19%2C727%2C1440%2C726%2C1440%2C900%2C2%2CP'
 
         my_headers = {
             "Content-Type": "application/json",
@@ -161,7 +161,7 @@ class Challenge9(unittest.TestCase):
             first_content = content[0]
 
             for key, value in first_content.items():
-                # print("{0}: {1} is data type {2}".format(key, value, type(value).__name__))
+                print("{0}: {1} is data type {2}".format(key, value, type(value).__name__))
                 if type(value).__name__ == 'str':
                     self.assertTrue(isinstance(value, str))
                 elif type(value).__name__ == 'int':
@@ -175,17 +175,6 @@ class Challenge9(unittest.TestCase):
                 else:
                     print('value:{0} type {1} is not defined statement'.format(value, type(value).__name__))
 
-            # # validate lotNumberStr is string
-            # lot_num_str = first_content['lotNumberStr']
-            # self.assertTrue(isinstance(lot_num_str, str))
-            #
-            # # validate ln is integer/float
-            # content_ln = first_content['ln']
-            # self.assertTrue(isinstance(lot_num_str, str))
-            #
-            # # validate mkn is str
-            # content_mkn = first_content['mkn']
-            # self.assertTrue(isinstance(lot_num_str, str))
         f.close()
 
 
